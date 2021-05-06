@@ -7,13 +7,19 @@ let package = Package(
     name: "Modules",
     platforms: [.iOS(.v14)],
     products: [
+        .library(name: "Application", targets: ["Application"]),
         .library(name: "Domain", targets: ["Domain"]),
+        .library(name: "UIComponents", targets: ["UIComponents"]),
     ],
     dependencies: [
         
     ],
     targets: [
+        .target(name: "Application", dependencies: [
+            
+        ]),
         .target(name: "Domain", dependencies: []),
-        .testTarget(name: "DomainTests", dependencies: ["Domain"])
+        .target(name: "UIComponents", dependencies: []),
+        .testTarget(name: "DomainTests", dependencies: ["Domain"]),
     ]
 )
