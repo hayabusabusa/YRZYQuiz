@@ -10,16 +10,20 @@ let package = Package(
         .library(name: "Application", targets: ["Application"]),
         .library(name: "Domain", targets: ["Domain"]),
         .library(name: "UIComponents", targets: ["UIComponents"]),
+        .library(name: "Shared", targets: ["Shared"]),
     ],
     dependencies: [
         
     ],
     targets: [
         .target(name: "Application", dependencies: [
-            
+            "Domain",
+            "UIComponents",
         ]),
         .target(name: "Domain", dependencies: []),
         .target(name: "UIComponents", dependencies: []),
+        .target(name: "Shared", dependencies: []),
         .testTarget(name: "DomainTests", dependencies: ["Domain"]),
+        .testTarget(name: "SharedTests", dependencies: ["Shared"]),
     ]
 )
