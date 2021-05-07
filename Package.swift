@@ -19,8 +19,11 @@ let package = Package(
         .target(name: "Application", dependencies: [
             "Domain",
             "UIComponents",
+            "Shared",
         ]),
-        .target(name: "Domain", dependencies: []),
+        .target(name: "Domain", dependencies: [
+            "Shared"
+        ]),
         .target(name: "UIComponents", dependencies: []),
         .target(name: "Shared", dependencies: []),
         .testTarget(name: "DomainTests", dependencies: ["Domain"]),
