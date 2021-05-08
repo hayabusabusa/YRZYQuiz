@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A54D99F826443BEB002077B1 /* YRZYQuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D99F726443BEB002077B1 /* YRZYQuizApp.swift */; };
-		A54D99FA26443BEB002077B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D99F926443BEB002077B1 /* ContentView.swift */; };
 		A54D99FC26443BEE002077B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54D99FB26443BEE002077B1 /* Assets.xcassets */; };
 		A54D99FF26443BEE002077B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54D99FE26443BEE002077B1 /* Preview Assets.xcassets */; };
 		A5EA7325264643C30074401F /* Application in Frameworks */ = {isa = PBXBuildFile; productRef = A5EA7324264643C30074401F /* Application */; };
@@ -17,7 +16,6 @@
 /* Begin PBXFileReference section */
 		A54D99F426443BEB002077B1 /* YRZYQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YRZYQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54D99F726443BEB002077B1 /* YRZYQuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YRZYQuizApp.swift; sourceTree = "<group>"; };
-		A54D99F926443BEB002077B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A54D99FB26443BEE002077B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A54D99FE26443BEE002077B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A54D9A0026443BEE002077B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				A54D99F726443BEB002077B1 /* YRZYQuizApp.swift */,
-				A54D99F926443BEB002077B1 /* ContentView.swift */,
 				A54D99FB26443BEE002077B1 /* Assets.xcassets */,
 				A54D9A0026443BEE002077B1 /* Info.plist */,
 				A54D99FD26443BEE002077B1 /* Preview Content */,
@@ -151,7 +148,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A54D99FA26443BEB002077B1 /* ContentView.swift in Sources */,
 				A54D99F826443BEB002077B1 /* YRZYQuizApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

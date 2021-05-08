@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import Application
 
 @main
 struct YRZYQuizApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeScreen()
         }
     }
 }
