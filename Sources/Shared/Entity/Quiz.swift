@@ -18,4 +18,16 @@ public struct Quiz: Decodable {
     public let answer: String
     /// 選択肢
     public let choices: [String]
+    
+    public init(question: String,
+                genre: String,
+                difficulty: Int,
+                answer: String,
+                choices: [String]) {
+       self.question = question
+       self.genre = genre
+       self.difficulty = difficulty
+       self.answer = answer
+       self.choices = choices
+   }
 }

@@ -9,4 +9,8 @@ import Foundation
 
 public struct Quizzes: Decodable {
     public let quizzes: [Quiz]
+    
+    public init(quizzes: [Quiz]) {
+        self.quizzes = quizzes
+    }
 }

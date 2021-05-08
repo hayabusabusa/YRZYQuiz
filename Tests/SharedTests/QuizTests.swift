@@ -48,4 +48,16 @@ final class QuizTests: XCTestCase {
         XCTAssertEqual(quiz?.answer, "人の名前")
         XCTAssertEqual(quiz?.choices, ["国の名前", "人の名前", "漢詩の一部"])
     }
+    
+    func test_イニシャライザの確認() {
+        let quiz = Quiz(question: "TEST", genre: "TEST", difficulty: 0, answer: "TEST", choices: ["TEST"])
+        let quizzes = Quizzes(quizzes: [quiz])
+        
+        XCTAssertEqual(quiz.question, "TEST")
+        XCTAssertEqual(quiz.genre, "TEST")
+        XCTAssertEqual(quiz.difficulty, 0)
+        XCTAssertEqual(quiz.answer, "TEST")
+        XCTAssertEqual(quiz.choices, ["TEST"])
+        XCTAssertEqual(quizzes.quizzes.count, 1)
+    }
 }

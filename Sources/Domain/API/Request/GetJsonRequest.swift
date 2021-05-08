@@ -6,13 +6,10 @@
 //
 
 import Foundation
-
-public struct TEST: Decodable {
-    
-}
+import Shared
 
 public struct GetJsonRequest: APIRequest {
-    public typealias Response = TEST
+    public typealias Response = Quizzes
     
     public var url: String {
         return "https://raw.githubusercontent.com/hayabusabusa/yrzy-hackathon-flutter/main/json/quiz.json"

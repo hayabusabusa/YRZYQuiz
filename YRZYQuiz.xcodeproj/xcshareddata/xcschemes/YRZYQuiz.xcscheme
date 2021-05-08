@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Domain"
-               BuildableName = "Domain"
-               BlueprintName = "Domain"
-               ReferencedContainer = "container:">
+               BlueprintIdentifier = "A54D99F326443BEB002077B1"
+               BuildableName = "YRZYQuiz.app"
+               BlueprintName = "YRZYQuiz"
+               ReferencedContainer = "container:YRZYQuiz.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -38,9 +38,9 @@
          </BuildableReference>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DomainTests"
-            BuildableName = "DomainTests"
-            BlueprintName = "DomainTests"
+            BlueprintIdentifier = "Shared"
+            BuildableName = "Shared"
+            BlueprintName = "Shared"
             ReferencedContainer = "container:">
          </BuildableReference>
       </CodeCoverageTargets>
@@ -52,6 +52,16 @@
                BlueprintIdentifier = "DomainTests"
                BuildableName = "DomainTests"
                BlueprintName = "DomainTests"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "SharedTests"
+               BuildableName = "SharedTests"
+               BlueprintName = "SharedTests"
                ReferencedContainer = "container:">
             </BuildableReference>
          </TestableReference>
@@ -67,6 +77,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "A54D99F326443BEB002077B1"
+            BuildableName = "YRZYQuiz.app"
+            BlueprintName = "YRZYQuiz"
+            ReferencedContainer = "container:YRZYQuiz.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -74,15 +94,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Domain"
-            BuildableName = "Domain"
-            BlueprintName = "Domain"
-            ReferencedContainer = "container:">
+            BlueprintIdentifier = "A54D99F326443BEB002077B1"
+            BuildableName = "YRZYQuiz.app"
+            BlueprintName = "YRZYQuiz"
+            ReferencedContainer = "container:YRZYQuiz.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		A54D99FA26443BEB002077B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D99F926443BEB002077B1 /* ContentView.swift */; };
 		A54D99FC26443BEE002077B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54D99FB26443BEE002077B1 /* Assets.xcassets */; };
 		A54D99FF26443BEE002077B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54D99FE26443BEE002077B1 /* Preview Assets.xcassets */; };
+		A5EA7325264643C30074401F /* Application in Frameworks */ = {isa = PBXBuildFile; productRef = A5EA7324264643C30074401F /* Application */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5EA7325264643C30074401F /* Application in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +40,7 @@
 			children = (
 				A54D99F626443BEB002077B1 /* YRZYQuiz */,
 				A54D99F526443BEB002077B1 /* Products */,
+				A5EA731D26458F6F0074401F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +72,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A5EA731D26458F6F0074401F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,6 +95,9 @@
 			dependencies = (
 			);
 			name = YRZYQuiz;
+			packageProductDependencies = (
+				A5EA7324264643C30074401F /* Application */,
+			);
 			productName = YRZYQuiz;
 			productReference = A54D99F426443BEB002077B1 /* YRZYQuiz.app */;
 			productType = "com.apple.product-type.application";
@@ -326,6 +339,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A5EA7324264643C30074401F /* Application */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Application;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A54D99EC26443BEB002077B1 /* Project object */;
 }
