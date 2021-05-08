@@ -10,10 +10,12 @@ import SwiftUI
 public struct RateView: View {
     private let rate: Int
     private let max: Int
+    private let iconSize: CGFloat
     
-    public init(rate: Int, max: Int = 5) {
+    public init(rate: Int, max: Int = 5, iconSize: CGFloat = 20) {
         self.rate = rate
         self.max = max
+        self.iconSize = iconSize
     }
     
     public var body: some View {
@@ -22,14 +24,14 @@ public struct RateView: View {
                 if num < rate {
                     Image(systemName: "star.fill")
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 24, height: 24)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: iconSize, height: iconSize)
                         .foregroundColor(.yellow)
                 } else {
                     Image(systemName: "star")
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 24, height: 24)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: iconSize, height: iconSize)
                         .foregroundColor(Color.gray.opacity(0.6))
                 }
             }
