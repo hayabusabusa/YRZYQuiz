@@ -11,6 +11,8 @@ import Shared
 public struct GetJsonRequest: APIRequest {
     public typealias Response = Quizzes
     
+    public init() {}
+    
     public var url: String {
         return "https://raw.githubusercontent.com/hayabusabusa/yrzy-hackathon-flutter/main/json/quiz.json"
     }
