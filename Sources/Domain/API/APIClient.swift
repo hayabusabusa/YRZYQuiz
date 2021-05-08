@@ -23,6 +23,7 @@ public final class APIClient: APIClientProtocol {
     
     public func call<T: APIRequest>(with request: T, completion: @escaping ((Result<T.Response, Error>) -> Void)) {
         guard let url = URL(string: request.url) else {
+            completion(.failure(APIError.invalidURL))
             return
         }
         
