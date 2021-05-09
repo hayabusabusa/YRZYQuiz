@@ -20,7 +20,8 @@ public final class QuizViewModel: ObservableObject {
     
     @Published public var index = 0
     // NOTE: `PassthroughSubject` でも初期値が必要なのがちょっと厄介.
-    @Published public var quiz: Quiz = Quiz(question: "", genre: "", difficulty: 0, answer: "", choices: [])
+    @Published private(set) public var quiz: Quiz = Quiz(question: "", genre: "", difficulty: 0, answer: "", choices: [])
+    @Published public var isFinish = false
     
     init(model: QuizModelProtocol = QuizModel()) {
         self.model = model
@@ -45,6 +46,10 @@ extension QuizViewModel {
         model.quizPublisher
             .receive(on: RunLoop.main)
             .assign(to: \.quiz, on: self)
+            .store(in: &cancellables)
+        
+        model.isFinishPublisher
+            .assign(to: \.isFinish, on: self)
             .store(in: &cancellables)
         
         model.fetchQuizzes()

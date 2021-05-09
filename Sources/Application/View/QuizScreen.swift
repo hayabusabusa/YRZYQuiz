@@ -45,6 +45,9 @@ public struct QuizScreen: View {
             }
             .padding(.all, 24)
             .navigationBarTitle("問題", displayMode: .inline)
+            .alert(isPresented: $viewModel.isFinish, content: {
+                Alert(title: Text(""), message: Text("終了"))
+            })
         }
     }
 }
