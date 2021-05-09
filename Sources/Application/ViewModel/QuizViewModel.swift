@@ -20,6 +20,7 @@ public final class QuizViewModel: ObservableObject {
     
     @Published public var index = 0
     // NOTE: `PassthroughSubject` でも初期値が必要なのがちょっと厄介.
+    // ここ素直にオプショナルにして View 側でアンラップして使う方が楽かも.
     @Published private(set) public var quiz: Quiz = Quiz(question: "", genre: "", difficulty: 0, answer: "", choices: [])
     @Published public var isFinish = false
     
