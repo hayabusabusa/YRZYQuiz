@@ -13,9 +13,14 @@ enum MockAPIError: Error {
 }
 
 final class MockAPIClicent: APIClientProtocol {
+    let stub: Decodable?
+    
+    public init(stub: Decodable) {
+        self.stub = stub
+    }
     
     func call<T>(with request: T, completion: @escaping ((Result<T.Response, Error>) -> Void)) where T : APIRequest {
-        guard let stub = request.stub else {
+        guard let stub = stub as? T.Response else {
             completion(.failure(MockAPIError.stubNotFound))
             return
         }

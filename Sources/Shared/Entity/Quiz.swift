@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Quiz: Decodable {
+public struct Quiz: Decodable, Equatable {
     /// 問題文
     public let question: String
     /// 問題のジャンル

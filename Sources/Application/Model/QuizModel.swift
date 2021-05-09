@@ -22,6 +22,7 @@ public protocol QuizModelProtocol {
 public final class QuizModel: QuizModelProtocol {
     
     private let client: APIClientProtocol
+    private let isShuffled: Bool
     
     private var quizzes: [Quiz] = []
     
@@ -37,8 +38,9 @@ public final class QuizModel: QuizModelProtocol {
     private var isFinishSubject: PassthroughSubject<Bool, Never>
     public let isFinishPublisher: AnyPublisher<Bool, Never>
     
-    public init(client: APIClientProtocol = APIClient.shared) {
+    public init(client: APIClientProtocol = APIClient.shared, isShuffled: Bool = true) {
         self.client = client
+        self.isShuffled = isShuffled
         
         self.indexSubject = CurrentValueSubject<Int, Never>(0)
         self.indexPublisher = indexSubject.eraseToAnyPublisher()
@@ -58,7 +60,10 @@ public final class QuizModel: QuizModelProtocol {
             switch result {
             case .success(let response):
                 var shuffledQuizzes = response.quizzes
-                shuffledQuizzes.shuffle()
+                
+                if self?.isShuffled ?? true {
+                    shuffledQuizzes.shuffle()
+                }
                 
                 // NOTE: 1問も存在しない場合は考慮しない.
                 guard let quiz = shuffledQuizzes.first else {
