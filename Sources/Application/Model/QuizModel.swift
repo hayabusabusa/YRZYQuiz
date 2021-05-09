@@ -59,18 +59,22 @@ public final class QuizModel: QuizModelProtocol {
         client.call(with: GetJsonRequest()) { [weak self] result in
             switch result {
             case .success(let response):
-                var shuffledQuizzes = response.quizzes
+                var quizzes = response.quizzes
                 
                 if self?.isShuffled ?? true {
-                    shuffledQuizzes.shuffle()
+                    let shuffled = quizzes.shuffled().map { quiz -> Quiz in
+                        let shuffledChoices = quiz.choices.shuffled()
+                        return Quiz(question: quiz.question, genre: quiz.genre, difficulty: quiz.difficulty, answer: quiz.answer, choices: shuffledChoices)
+                    }
+                    quizzes = shuffled
                 }
                 
                 // NOTE: 1問も存在しない場合は考慮しない.
-                guard let quiz = shuffledQuizzes.first else {
+                guard let quiz = quizzes.first else {
                     fatalError("[LOGIC ERROR]: クイズが1問も存在しない.")
                 }
                 
-                self?.quizzes = shuffledQuizzes
+                self?.quizzes = quizzes
                 self?.quizSubject.send(quiz)
             case .failure(let error):
                 debugPrint(error)

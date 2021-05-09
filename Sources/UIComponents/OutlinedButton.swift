@@ -18,7 +18,7 @@ public struct OutlinedButton: View {
                 label: String,
                 cornerRadius: CGFloat = 4.0,
                 insets: EdgeInsets = EdgeInsets(top: 12, leading: 0, bottom: 12, trailing: 0),
-                lineColor: Color = Color.gray.opacity(0.4)) {
+                lineColor: Color = Color.blue) {
         self.action = action
         self.label = label
         self.insets = insets
