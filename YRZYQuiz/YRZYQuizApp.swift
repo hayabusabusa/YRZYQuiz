@@ -12,7 +12,7 @@ import Application
 struct YRZYQuizApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeScreen()
+            QuizScreen()
         }
     }
 }

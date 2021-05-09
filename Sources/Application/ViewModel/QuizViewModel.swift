@@ -14,27 +14,38 @@ public final class QuizViewModel: ObservableObject {
     // MARK: Properties
     
     private let model: QuizModelProtocol
-    private var cancellables: [AnyCancellable] = []
+    private var cancellables = Set<AnyCancellable>()
     
-    @Published public var quiz: Quiz? = nil
+    // MARK: Outputs
+    
+    @Published public var index = 0
+    // NOTE: `PassthroughSubject` でも初期値が必要なのがちょっと厄介.
+    @Published public var quiz: Quiz = Quiz(question: "", genre: "", difficulty: 0, answer: "", choices: [])
     
     init(model: QuizModelProtocol = QuizModel()) {
         self.model = model
         bind()
+    }
+    
+    // MARK: Inputs
+    
+    public func onTapChoiceButton(choice: String) {
+        model.answer(choice: choice)
     }
 }
 
 extension QuizViewModel {
     
     private func bind() {
-        let quizzesSubscriber = model.quizzesPublisher
-            .map { $0.first }
-            .subscribe(on: RunLoop.main)
-            .assign(to: \.quiz, on: self)
+        model.indexPublisher
+            .map { $0 + 1 }
+            .assign(to: \.index, on: self)
+            .store(in: &cancellables)
         
-        cancellables += [
-            quizzesSubscriber
-        ]
+        model.quizPublisher
+            .receive(on: RunLoop.main)
+            .assign(to: \.quiz, on: self)
+            .store(in: &cancellables)
         
         model.fetchQuizzes()
     }

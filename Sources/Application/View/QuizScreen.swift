@@ -14,29 +14,38 @@ public struct QuizScreen: View {
     public init() {}
     
     public var body: some View {
-        VStack {
-            // MARK: Texts VStack
-            VStack(alignment: .leading, spacing: 12.0) {
-                Text("第1問 雑学")
-                    .font(.callout)
-                    .foregroundColor(.gray)
-                Text(viewModel.quiz?.question ?? "")
-                    .font(.title3)
-                    .bold()
-                RateView(rate: 2)
+        NavigationView {
+            VStack {
+                // MARK: Texts VStack
+                VStack(alignment: .leading, spacing: 12.0) {
+                    Text("第\(viewModel.index)問 \(viewModel.quiz.genre)")
+                        .font(.callout)
+                        .foregroundColor(.gray)
+                    HStack {
+                        Text(viewModel.quiz.question)
+                            .font(.title3)
+                            .bold()
+                        // NOTE: `HStack` と `Spacer` を使ってテキスト部分を画面いっぱいまで広げる
+                        Spacer()
+                    }
+                    RateView(rate: viewModel.quiz.difficulty)
+                }
+                
+                // MARK: Flexible Spacer
+                Spacer()
+                
+                // MARK: Buttons VStack
+                VStack(spacing: 12.0) {
+                    ForEach(viewModel.quiz.choices, id: \.self) { choice in
+                        OutlinedButton(action: {
+                            viewModel.onTapChoiceButton(choice: choice)
+                        }, label: choice)
+                    }
+                }
             }
-
-            // MARK: Flexible Spacer
-            Spacer()
-            
-            // MARK: Buttons VStack
-            VStack(spacing: 12.0) {
-                OutlinedButton(action: {}, label: "進化")
-                OutlinedButton(action: {}, label: "変態")
-                OutlinedButton(action: {}, label: "変化")
-            }
+            .padding(.all, 24)
+            .navigationBarTitle("問題", displayMode: .inline)
         }
-        .padding(.all, 24)
     }
 }
 
