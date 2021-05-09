@@ -9,6 +9,7 @@ import SwiftUI
 import UIComponents
 
 public struct QuizScreen: View {
+    @StateObject private var viewModel = QuizViewModel()
     
     public init() {}
     
@@ -19,7 +20,7 @@ public struct QuizScreen: View {
                 Text("第1問 雑学")
                     .font(.callout)
                     .foregroundColor(.gray)
-                Text("オタマジャクシからカエルに変わることを何という？")
+                Text(viewModel.quiz?.question ?? "")
                     .font(.title3)
                     .bold()
                 RateView(rate: 2)
