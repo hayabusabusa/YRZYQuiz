@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  QuizModel.swift
 //  
 //
 //  Created by Shunya Yamada on 2021/05/08.
