@@ -26,6 +26,7 @@ let package = Package(
         ]),
         .target(name: "UIComponents", dependencies: []),
         .target(name: "Shared", dependencies: []),
+        .testTarget(name: "ApplicationTests", dependencies: ["Application"]),
         .testTarget(name: "DomainTests", dependencies: ["Domain"]),
         .testTarget(name: "SharedTests", dependencies: ["Shared"]),
     ]
