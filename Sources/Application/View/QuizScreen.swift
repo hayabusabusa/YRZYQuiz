@@ -44,7 +44,11 @@ public struct QuizScreen: View {
                 }
             }
             .padding(.all, 24)
-            .navigationBarTitle("問題", displayMode: .inline)
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarItems(leading: HStack {
+                ProgressBar(value: $viewModel.index, max: 10)
+                    .frame(width: UIScreen.main.bounds.width - 40, height: 56)
+            })
             .alert(isPresented: $viewModel.isFinish, content: {
                 Alert(title: Text(""), message: Text("終了"))
             })

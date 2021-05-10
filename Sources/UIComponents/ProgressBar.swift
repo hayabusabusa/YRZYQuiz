@@ -8,34 +8,45 @@
 import SwiftUI
 
 public struct ProgressBar: View {
-    private let max: Int
+    @Binding var value: Int
+    let max: Int
     
-    @State private var value: Double = 0.0
+    @State private var doubleValue: Double = 0
     
-    public init(max: Int) {
+    public init(value: Binding<Int>, max: Int) {
+        self._value = value
         self.max = max
+        self._doubleValue = State(initialValue: Double(self.value) / Double(max))
     }
     
     public var body: some View {
-        Button(action: {
-            value += 0.1
-        }, label: {
-            VStack {
-                Text("1/\(max)")
+        VStack(spacing: 4.0) {
+            HStack(spacing: 4.0) {
+                Text(String(value))
+                    .font(.title3)
+                    .bold()
+                    .foregroundColor(Color(.systemGray))
+                
+                Text("/ \(max)")
                     .font(.caption)
                     .bold()
-                
-                ProgressView(value: value)
+                    .foregroundColor(Color(.systemGray))
             }
-            .padding()
+            ProgressView(value: doubleValue)
+        }
+        .padding()
+        .onChange(of: value, perform: { newValue in
+            doubleValue = Double(newValue) / Double(max)
         })
     }
 }
 
 struct ProgressBar_Previews: PreviewProvider {
+    @State static var value: Int = 4
+    
     static var previews: some View {
         Group {
-            ProgressBar(max: 10)
+            ProgressBar(value: $value, max: 10)
         }
         .previewLayout(.fixed(width: 320, height: 56))
     }
