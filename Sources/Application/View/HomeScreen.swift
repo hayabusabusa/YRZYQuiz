@@ -8,6 +8,8 @@
 import SwiftUI
 
 public struct HomeScreen: View {
+    @State private var isShowQuizScreen = false
+    
     public init() {
         
     }
@@ -39,7 +41,7 @@ public struct HomeScreen: View {
             // MARK: Buttons VStack
             VStack {
                 Button(action: {
-                    
+                    isShowQuizScreen = true
                 }, label: {
                     HStack {
                         Spacer()
@@ -54,6 +56,9 @@ public struct HomeScreen: View {
             }
         }
         .padding(.all, 24)
+        .fullScreenCover(isPresented: $isShowQuizScreen, content: {
+            QuizScreen()
+        })
     }
 }
 
