@@ -10,9 +10,7 @@ import SwiftUI
 public struct HomeScreen: View {
     @State private var isShowQuizScreen = false
     
-    public init() {
-        
-    }
+    public init() {}
     
     public var body: some View {
         VStack {

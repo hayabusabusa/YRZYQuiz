@@ -9,6 +9,7 @@ import SwiftUI
 import UIComponents
 
 public struct QuizScreen: View {
+    @Environment(\.presentationMode) var presentationMode
     @StateObject private var viewModel = QuizViewModel()
     
     public init() {}
@@ -45,7 +46,21 @@ public struct QuizScreen: View {
             }
             .padding(.all, 24)
             .navigationBarTitle("", displayMode: .inline)
-            .navigationBarItems(leading: HStack {
+            .navigationBarItems(leading: ZStack(alignment: .topLeading) {
+                // MARK: NavigationBar title
+                
+                // NOTE: UIKit の `UINavigationBar.titleView` みたいなものはないので、
+                // `ZStack` で重ねて `padding()` で位置を微調整する.
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Image(systemName: "xmark")
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 24, height: 24)
+                        .foregroundColor(Color.gray)
+                })
+                .padding(EdgeInsets(top: 4, leading: 12, bottom: 0, trailing: 0))
+                
                 ProgressBar(value: $viewModel.index, max: 10)
                     .frame(width: UIScreen.main.bounds.width - 40, height: 56)
             })
