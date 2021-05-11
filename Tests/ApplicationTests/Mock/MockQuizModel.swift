@@ -5,7 +5,7 @@
 //  Created by Shunya Yamada on 2021/05/11.
 //
 
-@testable import Application
+import Application
 import Combine
 import Foundation
 import Shared
@@ -26,7 +26,9 @@ final class MockQuizModel: QuizModelProtocol {
     private var isFinishSubject: PassthroughSubject<Bool, Never>
     public let isFinishPublisher: AnyPublisher<Bool, Never>
     
-    public init() {
+    public init(quizzes: [Quiz] = []) {
+        self .quizzes = quizzes
+        
         self.indexSubject = CurrentValueSubject<Int, Never>(0)
         self.indexPublisher = indexSubject.eraseToAnyPublisher()
         
@@ -41,7 +43,10 @@ final class MockQuizModel: QuizModelProtocol {
     }
     
     func fetchQuizzes() {
-        
+        guard let quiz = quizzes.first else {
+            fatalError("[LOGIC ERROR]: クイズが1問も存在しない.")
+        }
+        quizSubject.send(quiz)
     }
     
     func answer(choice: String) {
