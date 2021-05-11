@@ -26,7 +26,7 @@ final class MockQuizModel: QuizModelProtocol {
     private var isFinishSubject: PassthroughSubject<Bool, Never>
     public let isFinishPublisher: AnyPublisher<Bool, Never>
     
-    public init(quizzes: [Quiz] = []) {
+    public init(quizzes: [Quiz]) {
         self .quizzes = quizzes
         
         self.indexSubject = CurrentValueSubject<Int, Never>(0)
