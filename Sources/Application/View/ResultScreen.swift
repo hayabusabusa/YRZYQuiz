@@ -1,0 +1,31 @@
+//
+//  ResultScreen.swift
+//  
+//
+//  Created by Shunya Yamada on 2021/05/12.
+//
+
+import SwiftUI
+import UIComponents
+
+struct ResultScreen: View {
+    var body: some View {
+        NavigationView {
+            ScrollView {
+                LazyVStack {
+                    ForEach(0 ..< 10) { index in
+                        ResultCell(title: "This is TEST data. Index \(index)", answer: "index \(index)", isCorrect: index % 2 == 0)
+                    }
+                }
+            }
+            .navigationTitle("結果")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+    }
+}
+
+struct ResultScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        ResultScreen()
+    }
+}

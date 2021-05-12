@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ResultCell: View {
+public struct ResultCell: View {
     let title: String
     let answer: String
     let isCorrect: Bool
@@ -18,7 +18,7 @@ struct ResultCell: View {
         self.isCorrect = isCorrect
     }
     
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading, spacing: 8.0) {
             // MARK: Title HStack
             HStack {
@@ -43,7 +43,7 @@ struct ResultCell: View {
                 Spacer()
             }
         }
-        .padding()
+        .padding(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 20))
     }
 }
 
