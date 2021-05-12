@@ -8,8 +8,10 @@
 import SwiftUI
 import UIComponents
 
-struct ResultScreen: View {
-    var body: some View {
+public struct ResultScreen: View {
+    public init() {}
+    
+    public var body: some View {
         NavigationView {
             ScrollView {
                 LazyVStack {
