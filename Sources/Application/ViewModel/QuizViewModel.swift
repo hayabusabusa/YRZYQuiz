@@ -24,7 +24,7 @@ public final class QuizViewModel: ObservableObject {
     @Published private(set) public var quiz: Quiz = Quiz(question: "", genre: "", difficulty: 0, answer: "", choices: [])
     @Published public var isFinish = false
     
-    init(model: QuizModelProtocol = QuizModel()) {
+    public init(model: QuizModelProtocol = QuizModel()) {
         self.model = model
         bind()
     }
