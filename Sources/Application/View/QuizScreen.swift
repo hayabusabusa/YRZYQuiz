@@ -57,15 +57,14 @@ public struct QuizScreen: View {
                     Image(systemName: "xmark")
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 24, height: 24)
-                        .foregroundColor(Color.gray)
                 })
                 .padding(EdgeInsets(top: 4, leading: 12, bottom: 0, trailing: 0))
                 
                 ProgressBar(value: $viewModel.index, max: 10)
                     .frame(width: UIScreen.main.bounds.width - 40, height: 56)
             })
-            .alert(isPresented: $viewModel.isFinish, content: {
-                Alert(title: Text(""), message: Text("終了"))
+            .fullScreenCover(isPresented: $viewModel.isFinish, content: {
+                ResultScreen()
             })
         }
     }
