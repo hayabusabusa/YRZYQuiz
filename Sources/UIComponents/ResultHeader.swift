@@ -49,7 +49,7 @@ public struct ResultHeader: View {
                 .cornerRadius(4.0)
             })
         }
-        .padding(EdgeInsets(top: 16, leading: 24, bottom: 16, trailing: 24))
+        .padding(EdgeInsets(top: 24, leading: 24, bottom: 24, trailing: 24))
     }
 }
 
