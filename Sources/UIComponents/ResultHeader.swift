@@ -32,6 +32,7 @@ public struct ResultHeader: View {
                 .foregroundColor(percentColor)
             Text("\(numberOfQuiz)問中\(numberOfCorrect)問正解でした。")
                 .font(.subheadline)
+                .fontWeight(.medium)
             
             Spacer()
                 .frame(height: 16)

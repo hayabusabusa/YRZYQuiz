@@ -15,6 +15,7 @@ public struct ResultScreen: View {
         NavigationView {
             ScrollView {
                 LazyVStack {
+                    ResultHeader(percent: "100", percentColor: .green, numberOfQuiz: 10, numberOfCorrect: 10, action: {})
                     ForEach(0 ..< 10) { index in
                         ResultCell(title: "This is TEST data. Index \(index)", answer: "index \(index)", isCorrect: index % 2 == 0)
                     }
