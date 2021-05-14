@@ -28,6 +28,7 @@ public struct ResultScreen: View {
             .navigationTitle("結果")
             .navigationBarTitleDisplayMode(.inline)
         }
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 
