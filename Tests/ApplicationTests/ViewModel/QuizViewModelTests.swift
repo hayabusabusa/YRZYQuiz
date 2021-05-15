@@ -67,4 +67,26 @@ final class QuizViewModelTests: XCTestCase {
             wait(for: [result.expectation], timeout: 0.1)
         }
     }
+    
+    func test_クイズの結果が正しく返されることを確認() {
+        let stub = [
+            Quiz(question: "TEST1", genre: "TEST", difficulty: 1, answer: "TEST", choices: ["TEST"]),
+            Quiz(question: "TEST2", genre: "TEST", difficulty: 1, answer: "TEST", choices: ["TEST"])
+        ]
+        let model = MockQuizModel(quizzes: stub)
+        
+        // NOTE: クイズが正解したか不正解だったかを想定.
+        let expression = [
+            true,
+            false
+        ]
+        // NOTE: これ参照型だったから？同じ `QuizViewModel` が参照されて結果がリセットされていなかったので、別テストで作成.
+        let viewModel = QuizViewModel(model: model)
+        
+        viewModel.onTapChoiceButton(choice: "TEST")
+        viewModel.onTapChoiceButton(choice: "INCORRECT")
+        
+        // NOTE: 正解したか不正解だったかのみを比較.
+        XCTAssertEqual(viewModel.results.map { $0.isCorrect }, expression)
+    }
 }
