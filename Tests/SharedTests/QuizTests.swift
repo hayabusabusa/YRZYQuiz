@@ -52,6 +52,7 @@ final class QuizTests: XCTestCase {
     func test_イニシャライザの確認() {
         let quiz = Quiz(question: "TEST", genre: "TEST", difficulty: 0, answer: "TEST", choices: ["TEST"])
         let quizzes = Quizzes(quizzes: [quiz])
+        let quizResult = QuizResult(quiz: quiz, isCorrect: true)
         
         XCTAssertEqual(quiz.question, "TEST")
         XCTAssertEqual(quiz.genre, "TEST")
@@ -59,5 +60,7 @@ final class QuizTests: XCTestCase {
         XCTAssertEqual(quiz.answer, "TEST")
         XCTAssertEqual(quiz.choices, ["TEST"])
         XCTAssertEqual(quizzes.quizzes.count, 1)
+        XCTAssertEqual(quizResult.quiz, quiz)
+        XCTAssertEqual(quizResult.isCorrect, true)
     }
 }
