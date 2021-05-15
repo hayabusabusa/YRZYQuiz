@@ -63,9 +63,11 @@ public struct QuizScreen: View {
                 ProgressBar(value: $viewModel.index, max: 10)
                     .frame(width: UIScreen.main.bounds.width - 40, height: 56)
             })
-            .fullScreenCover(isPresented: $viewModel.isFinish, content: {
+            .fullScreenCover(isPresented: $viewModel.isFinish, onDismiss: {
+                presentationMode.wrappedValue.dismiss()
+            }) {
                 ResultScreen(results: viewModel.results)
-            })
+            }
         }
     }
 }

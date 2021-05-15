@@ -10,6 +10,7 @@ import UIComponents
 import Shared
 
 public struct ResultScreen: View {
+    @Environment(\.presentationMode) private var presentationMode
     private let results: [QuizResult]
     
     public init(results: [QuizResult]) {
@@ -21,8 +22,10 @@ public struct ResultScreen: View {
             ScrollView {
                 LazyVStack(spacing: 0) {
                     // MARK: Header
-                    ResultHeader(percent: percent, percentColor: .green, numberOfQuiz: results.count, numberOfCorrect: numberOfCorrects, action: {})
-                        .background(Color(UIColor.systemBackground))
+                    ResultHeader(percent: percent, percentColor: .green, numberOfQuiz: results.count, numberOfCorrect: numberOfCorrects, action: {
+                        presentationMode.wrappedValue.dismiss()
+                    })
+                    .background(Color(UIColor.systemBackground))
                     
                     // MARK: Separator
                     ResultSeparator(title: "問題一覧", showLine: false)
@@ -34,7 +37,7 @@ public struct ResultScreen: View {
                     }
                 }
                 // NOTE: 一応画面下のインセットを追加
-                .padding(.bottom, 16)
+                .padding(.bottom, 24)
             }
             .background(Color(UIColor.systemGroupedBackground))
             .edgesIgnoringSafeArea(.bottom)
