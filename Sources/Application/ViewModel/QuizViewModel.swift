@@ -24,6 +24,8 @@ public final class QuizViewModel: ObservableObject {
     @Published private(set) public var quiz: Quiz = Quiz(question: "", genre: "", difficulty: 0, answer: "", choices: [])
     @Published public var isFinish = false
     
+    private(set) public var results: [QuizResult] = []
+    
     public init(model: QuizModelProtocol = QuizModel()) {
         self.model = model
         bind()
@@ -49,7 +51,11 @@ extension QuizViewModel {
             .assign(to: \.quiz, on: self)
             .store(in: &cancellables)
         
-        model.isFinishPublisher
+        model.resultsPublisher
+            .handleEvents(receiveOutput: { [weak self] results in
+                self?.results = results
+            })
+            .map { _ in true }
             .assign(to: \.isFinish, on: self)
             .store(in: &cancellables)
         

@@ -64,7 +64,7 @@ public struct QuizScreen: View {
                     .frame(width: UIScreen.main.bounds.width - 40, height: 56)
             })
             .fullScreenCover(isPresented: $viewModel.isFinish, content: {
-                ResultScreen()
+                ResultScreen(results: viewModel.results)
             })
         }
     }

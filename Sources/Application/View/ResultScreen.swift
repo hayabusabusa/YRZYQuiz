@@ -7,24 +7,29 @@
 
 import SwiftUI
 import UIComponents
+import Shared
 
 public struct ResultScreen: View {
-    public init() {}
+    private let results: [QuizResult]
+    
+    public init(results: [QuizResult]) {
+        self.results = results
+    }
     
     public var body: some View {
         NavigationView {
             ScrollView {
                 LazyVStack(spacing: 0) {
                     // MARK: Header
-                    ResultHeader(percent: "100", percentColor: .green, numberOfQuiz: 10, numberOfCorrect: 10, action: {})
+                    ResultHeader(percent: percent, percentColor: .green, numberOfQuiz: results.count, numberOfCorrect: numberOfCorrects, action: {})
                         .background(Color(UIColor.systemBackground))
                     
                     // MARK: Separator
                     ResultSeparator(title: "問題一覧", showLine: false)
                     
                     // MARK: Cells
-                    ForEach(0 ..< 10) { index in
-                        ResultCell(title: "This is TEST data. Index \(index)", answer: "index \(index)", isCorrect: index % 2 == 0)
+                    ForEach(0 ..< results.count) { index in
+                        ResultCell(title: results[index].quiz.question, answer: results[index].quiz.answer, isCorrect: results[index].isCorrect)
                             .background(Color(UIColor.systemBackground))
                     }
                 }
@@ -39,8 +44,31 @@ public struct ResultScreen: View {
     }
 }
 
+extension ResultScreen {
+    
+    private var percent: String {
+        return "\(Int(Double(numberOfCorrects) / Double(results.count) * 100))"
+    }
+    
+    private var numberOfCorrects: Int {
+        return results.filter { $0.isCorrect }.count
+    }
+}
+
 struct ResultScreen_Previews: PreviewProvider {
+    static let results = [
+        QuizResult(quiz: Quiz(
+                    question: "テストの質問文",
+                    genre: "TEST",
+                    difficulty: 2,
+                    answer: "TEST",
+                    choices: [
+                        "TEST"
+                    ]),
+                   isCorrect: true)
+    ]
+    
     static var previews: some View {
-        ResultScreen()
+        ResultScreen(results: results)
     }
 }
