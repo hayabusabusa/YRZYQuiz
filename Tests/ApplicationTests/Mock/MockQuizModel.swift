@@ -13,6 +13,7 @@ import Shared
 final class MockQuizModel: QuizModelProtocol {
     
     private var quizzes: [Quiz] = []
+    private var results: [QuizResult] = []
     
     private let indexSubject: CurrentValueSubject<Int, Never>
     public let indexPublisher: AnyPublisher<Int, Never>
@@ -20,14 +21,15 @@ final class MockQuizModel: QuizModelProtocol {
     private let quizSubject: PassthroughSubject<Quiz, Never>
     public let quizPublisher: AnyPublisher<Quiz, Never>
     
+    private let resultsSubject: PassthroughSubject<[QuizResult], Never>
+    public let resultsPublisher: AnyPublisher<[QuizResult], Never>
+    
     private var isCorrectSubject: PassthroughSubject<Bool, Never>
     public let isCorrectPublisher: AnyPublisher<Bool, Never>
     
-    private var isFinishSubject: PassthroughSubject<Bool, Never>
-    public let isFinishPublisher: AnyPublisher<Bool, Never>
-    
     public init(quizzes: [Quiz]) {
-        self .quizzes = quizzes
+        self.quizzes = quizzes
+        self.results = []
         
         self.indexSubject = CurrentValueSubject<Int, Never>(0)
         self.indexPublisher = indexSubject.eraseToAnyPublisher()
@@ -35,11 +37,11 @@ final class MockQuizModel: QuizModelProtocol {
         self.quizSubject = PassthroughSubject<Quiz, Never>()
         self.quizPublisher = quizSubject.eraseToAnyPublisher()
         
+        self.resultsSubject = PassthroughSubject<[QuizResult], Never>()
+        self.resultsPublisher = resultsSubject.eraseToAnyPublisher()
+        
         self.isCorrectSubject = PassthroughSubject<Bool, Never>()
         self.isCorrectPublisher = isCorrectSubject.eraseToAnyPublisher()
-        
-        self.isFinishSubject = PassthroughSubject<Bool, Never>()
-        self.isFinishPublisher = isFinishSubject.eraseToAnyPublisher()
     }
     
     func fetchQuizzes() {
@@ -58,9 +60,11 @@ final class MockQuizModel: QuizModelProtocol {
         let isCorrect = answer == choice
         let nextIndex = indexSubject.value + 1
         
+        results.append(QuizResult(quiz: quizzes[indexSubject.value], isCorrect: isCorrect))
+        
         // NOTE: 最終問題まで到達したら終了する.
         if !quizzes.indices.contains(nextIndex) {
-            isFinishSubject.send(true)
+            resultsSubject.send(results)
             return
         }
         

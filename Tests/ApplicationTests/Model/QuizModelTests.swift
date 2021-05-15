@@ -102,16 +102,25 @@ final class QuizModelTests: XCTestCase {
             wait(for: [result.expectation], timeout: 1.0)
         }
         
-        XCTContext.runActivity(named: "最終問題まで到達したら終了のフラグが流れることを確認") { _ in
+        XCTContext.runActivity(named: "最終問題まで到達したら結果が流れることを確認") { _ in
+            let quiz = stub.quizzes.first!
+            let results = [
+                QuizResult(quiz: quiz, isCorrect: true),
+                QuizResult(quiz: quiz, isCorrect: false)
+            ]
             let model = QuizModel(client: client, isShuffled: false)
             
-            let expectValues = [true]
-            let result = expectValue(of: model.isFinishPublisher, equals: expectValues)
+            // NOET: 正解したか、不正解だったかのみを比較する.
+            let expectValues = [
+                results.map { $0.isCorrect }
+            ]
+            let publisher = model.resultsPublisher.map { $0.map { $0.isCorrect } }.eraseToAnyPublisher()
+            let result = expectValue(of: publisher, equals: expectValues)
             
             model.fetchQuizzes()
             
             model.answer(choice: "TEST")
-            model.answer(choice: "TEST")
+            model.answer(choice: "INCORRECT")
             
             wait(for: [result.expectation], timeout: 1.0)
         }

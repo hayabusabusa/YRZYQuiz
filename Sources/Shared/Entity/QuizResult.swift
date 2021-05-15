@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct QuizResult {
+public struct QuizResult: Equatable {
     public let quiz: Quiz
     public let isCorrect: Bool
     
