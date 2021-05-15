@@ -53,6 +53,7 @@ final class QuizTests: XCTestCase {
         let quiz = Quiz(question: "TEST", genre: "TEST", difficulty: 0, answer: "TEST", choices: ["TEST"])
         let quizzes = Quizzes(quizzes: [quiz])
         let quizResult = QuizResult(quiz: quiz, isCorrect: true)
+        let storedResult = StoredResult(numberOfAnswered: 10, numberOfCorrect: 5, percent: 50)
         
         XCTAssertEqual(quiz.question, "TEST")
         XCTAssertEqual(quiz.genre, "TEST")
@@ -62,5 +63,8 @@ final class QuizTests: XCTestCase {
         XCTAssertEqual(quizzes.quizzes.count, 1)
         XCTAssertEqual(quizResult.quiz, quiz)
         XCTAssertEqual(quizResult.isCorrect, true)
+        XCTAssertEqual(storedResult.numberOfAnswered, 10)
+        XCTAssertEqual(storedResult.numberOfCorrect, 5)
+        XCTAssertEqual(storedResult.percent, 50)
     }
 }
