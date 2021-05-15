@@ -21,12 +21,13 @@ public struct ResultCell: View {
     public var body: some View {
         VStack(alignment: .leading, spacing: 8.0) {
             // MARK: Title HStack
-            HStack {
+            HStack(spacing: 12.0) {
                 Image(systemName: isCorrect ? "circle" : "xmark")
                     .frame(width: 20, height: 20)
                     .foregroundColor(isCorrect ? .green : .red)
                 Text(title)
                     .lineLimit(2)
+                    .foregroundColor(isCorrect ? .green : .red)
                     .fixedSize(horizontal: false, vertical: true)
             }
             
