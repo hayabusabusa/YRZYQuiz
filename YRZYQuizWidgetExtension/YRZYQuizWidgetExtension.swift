@@ -56,8 +56,8 @@ struct YRZYQuizWidgetExtension: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             YRZYQuizWidgetExtensionEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("クイズの結果")
+        .description("今まで答えたクイズの結果を確認することができます。")
     }
 }
 
