@@ -10,8 +10,39 @@
 		A54D99F826443BEB002077B1 /* YRZYQuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D99F726443BEB002077B1 /* YRZYQuizApp.swift */; };
 		A54D99FC26443BEE002077B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54D99FB26443BEE002077B1 /* Assets.xcassets */; };
 		A54D99FF26443BEE002077B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54D99FE26443BEE002077B1 /* Preview Assets.xcassets */; };
+		A5AD819226513056003CF30B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5AD819126513056003CF30B /* WidgetKit.framework */; };
+		A5AD819426513056003CF30B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5AD819326513056003CF30B /* SwiftUI.framework */; };
+		A5AD819726513056003CF30B /* YRZYQuizWidgetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AD819626513056003CF30B /* YRZYQuizWidgetExtension.swift */; };
+		A5AD819A26513058003CF30B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5AD819926513058003CF30B /* Assets.xcassets */; };
+		A5AD819C26513058003CF30B /* YRZYQuizWidgetExtension.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A5AD819826513056003CF30B /* YRZYQuizWidgetExtension.intentdefinition */; };
+		A5AD819D26513058003CF30B /* YRZYQuizWidgetExtension.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A5AD819826513056003CF30B /* YRZYQuizWidgetExtension.intentdefinition */; };
+		A5AD81A026513058003CF30B /* YRZYQuizWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A5AD819026513056003CF30B /* YRZYQuizWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A5EA7325264643C30074401F /* Application in Frameworks */ = {isa = PBXBuildFile; productRef = A5EA7324264643C30074401F /* Application */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A5AD819E26513058003CF30B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A54D99EC26443BEB002077B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5AD818F26513056003CF30B;
+			remoteInfo = YRZYQuizWidgetExtensionExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A5AD81A426513058003CF30B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A5AD81A026513058003CF30B /* YRZYQuizWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A54D99F426443BEB002077B1 /* YRZYQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YRZYQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,6 +50,15 @@
 		A54D99FB26443BEE002077B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A54D99FE26443BEE002077B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A54D9A0026443BEE002077B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5AD818B26512F74003CF30B /* YRZYQuiz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YRZYQuiz.entitlements; sourceTree = "<group>"; };
+		A5AD819026513056003CF30B /* YRZYQuizWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = YRZYQuizWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5AD819126513056003CF30B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		A5AD819326513056003CF30B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A5AD819626513056003CF30B /* YRZYQuizWidgetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YRZYQuizWidgetExtension.swift; sourceTree = "<group>"; };
+		A5AD819826513056003CF30B /* YRZYQuizWidgetExtension.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = YRZYQuizWidgetExtension.intentdefinition; sourceTree = "<group>"; };
+		A5AD819926513058003CF30B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A5AD819B26513058003CF30B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5AD81AB265130D6003CF30B /* YRZYQuizWidgetExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YRZYQuizWidgetExtensionDebug.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +70,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5AD818D26513056003CF30B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5AD819426513056003CF30B /* SwiftUI.framework in Frameworks */,
+				A5AD819226513056003CF30B /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -37,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				A54D99F626443BEB002077B1 /* YRZYQuiz */,
+				A5AD819526513056003CF30B /* YRZYQuizWidgetExtension */,
 				A54D99F526443BEB002077B1 /* Products */,
 				A5EA731D26458F6F0074401F /* Frameworks */,
 			);
@@ -46,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				A54D99F426443BEB002077B1 /* YRZYQuiz.app */,
+				A5AD819026513056003CF30B /* YRZYQuizWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,6 +104,7 @@
 		A54D99F626443BEB002077B1 /* YRZYQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				A5AD818B26512F74003CF30B /* YRZYQuiz.entitlements */,
 				A54D99F726443BEB002077B1 /* YRZYQuizApp.swift */,
 				A54D99FB26443BEE002077B1 /* Assets.xcassets */,
 				A54D9A0026443BEE002077B1 /* Info.plist */,
@@ -69,9 +121,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A5AD819526513056003CF30B /* YRZYQuizWidgetExtension */ = {
+			isa = PBXGroup;
+			children = (
+				A5AD81AB265130D6003CF30B /* YRZYQuizWidgetExtensionDebug.entitlements */,
+				A5AD819626513056003CF30B /* YRZYQuizWidgetExtension.swift */,
+				A5AD819826513056003CF30B /* YRZYQuizWidgetExtension.intentdefinition */,
+				A5AD819926513058003CF30B /* Assets.xcassets */,
+				A5AD819B26513058003CF30B /* Info.plist */,
+			);
+			path = YRZYQuizWidgetExtension;
+			sourceTree = "<group>";
+		};
 		A5EA731D26458F6F0074401F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5AD819126513056003CF30B /* WidgetKit.framework */,
+				A5AD819326513056003CF30B /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -86,10 +152,12 @@
 				A54D99F026443BEB002077B1 /* Sources */,
 				A54D99F126443BEB002077B1 /* Frameworks */,
 				A54D99F226443BEB002077B1 /* Resources */,
+				A5AD81A426513058003CF30B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A5AD819F26513058003CF30B /* PBXTargetDependency */,
 			);
 			name = YRZYQuiz;
 			packageProductDependencies = (
@@ -98,6 +166,23 @@
 			productName = YRZYQuiz;
 			productReference = A54D99F426443BEB002077B1 /* YRZYQuiz.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A5AD818F26513056003CF30B /* YRZYQuizWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5AD81A126513058003CF30B /* Build configuration list for PBXNativeTarget "YRZYQuizWidgetExtension" */;
+			buildPhases = (
+				A5AD818C26513056003CF30B /* Sources */,
+				A5AD818D26513056003CF30B /* Frameworks */,
+				A5AD818E26513056003CF30B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YRZYQuizWidgetExtension;
+			productName = YRZYQuizWidgetExtensionExtension;
+			productReference = A5AD819026513056003CF30B /* YRZYQuizWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -109,6 +194,9 @@
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					A54D99F326443BEB002077B1 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					A5AD818F26513056003CF30B = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -127,6 +215,7 @@
 			projectRoot = "";
 			targets = (
 				A54D99F326443BEB002077B1 /* YRZYQuiz */,
+				A5AD818F26513056003CF30B /* YRZYQuizWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -141,6 +230,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5AD818E26513056003CF30B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5AD819A26513058003CF30B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -149,10 +246,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				A54D99F826443BEB002077B1 /* YRZYQuizApp.swift in Sources */,
+				A5AD819D26513058003CF30B /* YRZYQuizWidgetExtension.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5AD818C26513056003CF30B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5AD819726513056003CF30B /* YRZYQuizWidgetExtension.swift in Sources */,
+				A5AD819C26513058003CF30B /* YRZYQuizWidgetExtension.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A5AD819F26513058003CF30B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5AD818F26513056003CF30B /* YRZYQuizWidgetExtension */;
+			targetProxy = A5AD819E26513058003CF30B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A54D9A0126443BEE002077B1 /* Debug */ = {
@@ -274,10 +389,13 @@
 		A54D9A0426443BEE002077B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = YRZYQuiz/YRZYQuiz.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"YRZYQuiz/Preview Content\"";
+				DEVELOPMENT_TEAM = 7NJH5NAV4T;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = YRZYQuiz/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -287,6 +405,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ShunyaYamada.YRZYQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -295,10 +414,13 @@
 		A54D9A0526443BEE002077B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = YRZYQuiz/YRZYQuiz.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"YRZYQuiz/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = YRZYQuiz/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -308,6 +430,51 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ShunyaYamada.YRZYQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A5AD81A226513058003CF30B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = YRZYQuizWidgetExtension/YRZYQuizWidgetExtensionDebug.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 7NJH5NAV4T;
+				INFOPLIST_FILE = YRZYQuizWidgetExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ShunyaYamada.YRZYQuiz.YRZYQuizWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A5AD81A326513058003CF30B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = YRZYQuizWidgetExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ShunyaYamada.YRZYQuiz.YRZYQuizWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -330,6 +497,15 @@
 			buildConfigurations = (
 				A54D9A0426443BEE002077B1 /* Debug */,
 				A54D9A0526443BEE002077B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5AD81A126513058003CF30B /* Build configuration list for PBXNativeTarget "YRZYQuizWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5AD81A226513058003CF30B /* Debug */,
+				A5AD81A326513058003CF30B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
