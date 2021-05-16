@@ -12,6 +12,7 @@ import Shared
 public struct ResultScreen: View {
     @Environment(\.presentationMode) private var presentationMode
     private let results: [QuizResult]
+    private let viewModel = ResultViewModel()
     
     public init(results: [QuizResult]) {
         self.results = results
@@ -44,6 +45,9 @@ public struct ResultScreen: View {
             .navigationTitle("結果")
             .navigationBarTitleDisplayMode(.inline)
         }
+        .onAppear(perform: {
+            viewModel.onAppear(results: results)
+        })
     }
 }
 
