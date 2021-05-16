@@ -14,7 +14,7 @@ final class MockUserDefaultsProvider: UserDefaultsProviderProtocol {
     
     func value<T>(_ decodableType: T.Type, forKey name: UserDefaultsProvider.Key) -> T? where T : Decodable {
         guard let value = dictionary[name.rawValue] as? T else {
-            fatalError("Value for key named \(name.rawValue) not found.")
+            return nil
         }
         return value
     }
