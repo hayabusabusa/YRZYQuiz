@@ -19,7 +19,7 @@ public final class UserDefaultsProvider: UserDefaultsProviderProtocol {
     private var userDefaults: UserDefaults
     
     private init() {
-        guard let userDefaults = UserDefaults(suiteName: "ShunyaYamada.YRZYQuiz.AppGroups") else {
+        guard let userDefaults = UserDefaults(suiteName: "group.ShunyaYamada.YRZYQuiz.AppGroups") else {
             fatalError("AppGroups may be not configured.")
         }
         self.userDefaults = userDefaults
