@@ -8,6 +8,7 @@
 import Domain
 import Foundation
 import Shared
+import WidgetKit
 
 public protocol ResultModelProtocol: AnyObject {
     func save(results: [QuizResult])
@@ -40,5 +41,8 @@ public final class ResultModel: ResultModelProtocol {
             let percent = Int(Double(numberOfCorrect) / Double(numberOfAnswered) * 100)
             provider.set(StoredResult(numberOfAnswered: numberOfAnswered, numberOfCorrect: numberOfCorrect, percent: percent), forKey: .result)
         }
+        
+        // NOTE: 保存が完了したら Widget をリロードする.
+        WidgetCenter.shared.reloadTimelines(ofKind: "YRZYQuizWidget")
     }
 }

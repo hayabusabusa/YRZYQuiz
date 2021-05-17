@@ -15,6 +15,9 @@
 		A5AD81B72652584B003CF30B /* YRZYQuizWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AD81B62652584B003CF30B /* YRZYQuizWidget.swift */; };
 		A5AD81B92652584D003CF30B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5AD81B82652584D003CF30B /* Assets.xcassets */; };
 		A5AD81BD2652584D003CF30B /* YRZYQuizWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A5AD81B22652584B003CF30B /* YRZYQuizWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A5AD81CE265283D5003CF30B /* StoredResultEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AD81CD265283D4003CF30B /* StoredResultEntry.swift */; };
+		A5AD81D4265283FB003CF30B /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = A5AD81D3265283FB003CF30B /* Domain */; };
+		A5AD81D6265283FB003CF30B /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = A5AD81D5265283FB003CF30B /* Shared */; };
 		A5EA7325264643C30074401F /* Application in Frameworks */ = {isa = PBXBuildFile; productRef = A5EA7324264643C30074401F /* Application */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +59,7 @@
 		A5AD81B82652584D003CF30B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5AD81BA2652584D003CF30B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5AD81CA265258D5003CF30B /* YRZYQuizWidgetDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YRZYQuizWidgetDebug.entitlements; sourceTree = "<group>"; };
+		A5AD81CD265283D4003CF30B /* StoredResultEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredResultEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5AD81D4265283FB003CF30B /* Domain in Frameworks */,
+				A5AD81D6265283FB003CF30B /* Shared in Frameworks */,
 				A5AD81B42652584B003CF30B /* SwiftUI.framework in Frameworks */,
 				A5AD81B32652584B003CF30B /* WidgetKit.framework in Frameworks */,
 			);
@@ -122,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				A5AD81CA265258D5003CF30B /* YRZYQuizWidgetDebug.entitlements */,
+				A5AD81CD265283D4003CF30B /* StoredResultEntry.swift */,
 				A5AD81B62652584B003CF30B /* YRZYQuizWidget.swift */,
 				A5AD81B82652584D003CF30B /* Assets.xcassets */,
 				A5AD81BA2652584D003CF30B /* Info.plist */,
@@ -176,6 +183,10 @@
 			dependencies = (
 			);
 			name = YRZYQuizWidget;
+			packageProductDependencies = (
+				A5AD81D3265283FB003CF30B /* Domain */,
+				A5AD81D5265283FB003CF30B /* Shared */,
+			);
 			productName = YRZYQuizWidgetExtension;
 			productReference = A5AD81B22652584B003CF30B /* YRZYQuizWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -249,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5AD81CE265283D5003CF30B /* StoredResultEntry.swift in Sources */,
 				A5AD81B72652584B003CF30B /* YRZYQuizWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +519,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A5AD81D3265283FB003CF30B /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
+		};
+		A5AD81D5265283FB003CF30B /* Shared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Shared;
+		};
 		A5EA7324264643C30074401F /* Application */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Application;
