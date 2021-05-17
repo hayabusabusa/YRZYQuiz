@@ -18,6 +18,7 @@
 		A5AD81CE265283D5003CF30B /* StoredResultEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AD81CD265283D4003CF30B /* StoredResultEntry.swift */; };
 		A5AD81D4265283FB003CF30B /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = A5AD81D3265283FB003CF30B /* Domain */; };
 		A5AD81D6265283FB003CF30B /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = A5AD81D5265283FB003CF30B /* Shared */; };
+		A5AD81DA26528A61003CF30B /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AD81D926528A61003CF30B /* Provider.swift */; };
 		A5EA7325264643C30074401F /* Application in Frameworks */ = {isa = PBXBuildFile; productRef = A5EA7324264643C30074401F /* Application */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		A5AD81BA2652584D003CF30B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5AD81CA265258D5003CF30B /* YRZYQuizWidgetDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YRZYQuizWidgetDebug.entitlements; sourceTree = "<group>"; };
 		A5AD81CD265283D4003CF30B /* StoredResultEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredResultEntry.swift; sourceTree = "<group>"; };
+		A5AD81D926528A61003CF30B /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				A5AD81CA265258D5003CF30B /* YRZYQuizWidgetDebug.entitlements */,
+				A5AD81D926528A61003CF30B /* Provider.swift */,
 				A5AD81CD265283D4003CF30B /* StoredResultEntry.swift */,
 				A5AD81B62652584B003CF30B /* YRZYQuizWidget.swift */,
 				A5AD81B82652584D003CF30B /* Assets.xcassets */,
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5AD81CE265283D5003CF30B /* StoredResultEntry.swift in Sources */,
+				A5AD81DA26528A61003CF30B /* Provider.swift in Sources */,
 				A5AD81B72652584B003CF30B /* YRZYQuizWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

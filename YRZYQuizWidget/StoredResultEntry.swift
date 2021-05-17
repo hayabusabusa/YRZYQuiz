@@ -19,4 +19,6 @@ public struct StoredResultEntry: TimelineEntry {
         self.numberOfAnswered = numberOfAnswered
         self.numberOfCorrect = numberOfCorrect
     }
+    
+    internal static let empty = StoredResultEntry(date: Date(), percent: 0, numberOfAnswered: 0, numberOfCorrect: 0)
 }
