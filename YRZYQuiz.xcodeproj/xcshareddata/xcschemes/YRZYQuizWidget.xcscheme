@@ -15,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A5AD818F26513056003CF30B"
-               BuildableName = "YRZYQuizWidgetExtension.appex"
-               BlueprintName = "YRZYQuizWidgetExtension"
+               BlueprintIdentifier = "A5AD81B12652584B003CF30B"
+               BuildableName = "YRZYQuizWidget.appex"
+               BlueprintName = "YRZYQuizWidget"
                ReferencedContainer = "container:YRZYQuiz.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
