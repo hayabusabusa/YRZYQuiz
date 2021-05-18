@@ -12,8 +12,34 @@ struct EntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        Text("\(entry.percent)")
-            .font(.title)
+        VStack {
+            // MARK: Percent VStack
+            VStack(spacing: 0) {
+                Spacer()
+                Text("現在の正解率")
+                    .font(.caption2)
+                Text("\(entry.percent)%")
+                    .font(.system(size: 40))
+                    .bold()
+                    .foregroundColor(.green)
+                Spacer()
+            }
+            
+            // MARK: Numbers HStack
+            HStack(alignment: .lastTextBaseline, spacing: 2.0) {
+                Spacer()
+                Text("\(entry.numberOfCorrect)")
+                    .font(.system(size: 20))
+                    .fontWeight(.medium)
+                Text("/")
+                    .font(.caption)
+                Text("\(entry.numberOfAnswered)")
+                    .font(.caption)
+                    .fontWeight(.medium)
+            }
+            .foregroundColor(.gray)
+        }
+        .padding(.all, 16)
     }
 }
 
@@ -32,8 +58,12 @@ struct YRZYQuizWidget: Widget {
 }
 
 struct YRZYQuizWidget_Previews: PreviewProvider {
+    static let entry = StoredResultEntry(date: Date(), percent: 100, numberOfAnswered: 100, numberOfCorrect: 100)
+    
     static var previews: some View {
-        EntryView(entry: StoredResultEntry.empty)
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        Group {
+            EntryView(entry: entry)
+        }
+        .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
