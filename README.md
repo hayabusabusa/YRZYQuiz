@@ -17,3 +17,9 @@ Screens and widget.
 | Small |
 | :-: |
 | <img src="https://user-images.githubusercontent.com/31949692/118642192-03f34d00-b816-11eb-863a-a5c382f668f7.png" width="240" alt="Simulator Screen Shot - iPhone 12 - 2021-05-18 at 20 12 30"> |
+
+## Test
+
+| Application | Domain | Shared |
+| :-: | :-: | :-: |
+| <img width="457" alt="スクリーンショット 2021-05-20 18 43 46" src="https://user-images.githubusercontent.com/31949692/118957489-85c0b300-b99b-11eb-8601-5e3d88921be3.png"> | <img width="457" alt="スクリーンショット 2021-05-20 18 43 38" src="https://user-images.githubusercontent.com/31949692/118957484-85281c80-b99b-11eb-819d-b3f75414c721.png"> | <img width="456" alt="スクリーンショット 2021-05-20 18 43 28" src="https://user-images.githubusercontent.com/31949692/118957471-835e5900-b99b-11eb-832c-7e3732e25902.png"> |
